@@ -1,0 +1,19 @@
+# Java
+bin
+lib
+
+# Eclipse
+.classpath
+.project
+.settings
+
+# Logs
+logs
+*.log
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
