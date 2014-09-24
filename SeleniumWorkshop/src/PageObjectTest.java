@@ -37,7 +37,7 @@ public class PageObjectTest {
 	}
 
 	@Test
-	public void testAppleNavigation() throws InterruptedException {
+	public void testAppleNavigation() throws Exception {
 		driver.get("http://apple.com");
 
 		LandingPage landingPage = new LandingPage(driver);
