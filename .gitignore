@@ -1,6 +1,9 @@
 # Java
 bin
 lib
+*.jar
+*.war
+*.ear
 
 # Eclipse
 .classpath
@@ -10,6 +13,7 @@ lib
 # Logs
 logs
 *.log
+CHANGELOG
 
 # OSX
 .DS_Store

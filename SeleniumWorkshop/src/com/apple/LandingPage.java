@@ -7,27 +7,19 @@ public class LandingPage {
 	private WebDriver driver;
 	
 	// Top Bar
-	private By HOME = By.xpath("//*[@id='gn-apple']/a");
-	private By STORE = By.xpath("//*[@id='gn-store']/a");
-	private By MAC = By.xpath("//*[@id='gn-mac']/a");
-	private By IPHONE = By.xpath("//*[@id='gn-iphone']/a");
-	private By IPAD = By.xpath("//*[@id='gn-ipad']/a");
-	private By SEARCH = By.id("sp-searchtext");
+	private By HOME = By.xpath("//*[contains(@class,'gh-tab-apple')]/a");
+	private By STORE = By.xpath("//*[contains(@class,'gh-tab-store')]/a");
+	private By MAC = By.xpath("//*[contains(@class,'gh-tab-mac')]/a");
+	private By IPHONE = By.xpath("//*[contains(@class,'gh-tab-iphone')]/a");
+	private By IPAD = By.xpath("//*[contains(@class,'gh-tab-ipad')]/a");
+	private By SEARCH = By.id("gh-search-input");
 	
 	public LandingPage(WebDriver aDriver) {
-		super();
 		this.driver = aDriver;
-
-		// Make sure we are on the right page
-		if (!"Apple".equals(aDriver.getTitle())) {
-			throw new IllegalStateException("This is not the landing page: " + aDriver.getTitle());
-		}
 	}
 
-	public LandingPage goHome() {
+	public void goHome() {
 		driver.findElement(HOME).click();
-		
-		return new LandingPage(driver);
 	}
 
 	public void goToStore() {
@@ -42,10 +34,8 @@ public class LandingPage {
 		driver.findElement(IPHONE).click();
 	}
 
-	public IPadPage goToIPad() throws Exception {
+	public void goToIPad() {
 		driver.findElement(IPAD).click();
-		
-		return new IPadPage(driver);
 	}
 
 	public void searchFor(String something) {

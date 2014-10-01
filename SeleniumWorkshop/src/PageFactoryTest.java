@@ -13,13 +13,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.PageFactory;
 
-import com.apple.IOSPage;
-import com.apple.IPadPage;
-import com.apple.LandingPage;
+import com.apple.factory.IOSPage;
+import com.apple.factory.IPadPage;
+import com.apple.factory.LandingPage;
 
 @SuppressWarnings("unused")
-public class PageObjectTest {
+public class PageFactoryTest {
 
 	WebDriver driver;
 
@@ -41,17 +42,17 @@ public class PageObjectTest {
 	public void testAppleNavigation() throws Exception {
 		driver.get("http://apple.com");
 
-		LandingPage landingPage = new LandingPage(driver);
+		LandingPage landingPage = PageFactory.initElements(driver, LandingPage.class);
 		landingPage.goToIPad();
 		
-		IPadPage iPadPage = new IPadPage(driver);
+		IPadPage iPadPage = PageFactory.initElements(driver, IPadPage.class );
 		iPadPage.ios();
 		
-		IOSPage iosPage = new IOSPage(driver);
+		IOSPage iosPage = PageFactory.initElements(driver, IOSPage.class );
 		Thread.sleep(2000);
 		iosPage.goHome();
 		
-		landingPage = new LandingPage(driver);
+		landingPage = PageFactory.initElements(driver, LandingPage.class );
 		landingPage.searchFor("Bill Gates");
 
 		Thread.sleep(5000);
