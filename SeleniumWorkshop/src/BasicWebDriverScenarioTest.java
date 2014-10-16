@@ -4,7 +4,7 @@ import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class BasicScenarioTest {
+public class BasicWebDriverScenarioTest {
 
 	@Test
 	public void testWikipediaSearch() {

@@ -1,4 +1,4 @@
-package io.github.jclarkin.junitbasics;
+
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class BasicScenarioHTest {
+public class BasicJUnitScenarioTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
